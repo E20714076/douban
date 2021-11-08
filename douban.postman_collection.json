@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "2f6b9269-e9e9-48c3-a128-640637aad19f",
+		"name": "douban",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bookSearch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"正在搜索...\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://search.douban.com/book/subject_search?search_test=白鹿原&cat=1001",
+					"protocol": "https",
+					"host": [
+						"search",
+						"douban",
+						"com"
+					],
+					"path": [
+						"book",
+						"subject_search"
+					],
+					"query": [
+						{
+							"key": "search_test",
+							"value": "白鹿原"
+						},
+						{
+							"key": "cat",
+							"value": "1001"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
